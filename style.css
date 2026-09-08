@@ -1,1 +1,4 @@
-https://raw.githubusercontent.com/Chaero0707/Chaerogoogsdtylesheet/refs/heads/main/pngtree-a-black-and-white-go-board-and-stones-on-the-grid-image_13062223.jpg
+body {
+    background-image: url('https://raw.githubusercontent.com/Chaero0707/Chaerogoogsdtylesheet/refs/heads/main/pngtree-a-black-and-white-go-board-and-stones-on-the-grid-image_13062223.jpg');
+    background-size: cover;
+}
