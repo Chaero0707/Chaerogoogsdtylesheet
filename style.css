@@ -1,4 +1,140 @@
-body {
-    background-image: url('https://raw.githubusercontent.com/Chaero0707/Chaerogoogsdtylesheet/refs/heads/main/pngtree-a-black-and-white-go-board-and-stones-on-the-grid-image_13062223.jpg');
-    background-size: cover;
+```css
+/* =========================================================
+   OGS PROFILE STYLE SHEET
+   ─────────────────────────────────────────────────────────
+   수정하고 싶은 부분은 이곳의 "CUSTOM SETTINGS"만 수정하세요.
+   ========================================================= */
+
+
+/* =========================================================
+   CUSTOM SETTINGS
+   ========================================================= */
+
+/* 프로필 배경색 */
+:root {
+    --profile-bg: #FFF9D9;
+
+    /* 아래 글씨는 기존 OGS 색상을 그대로 사용 */
+    --extra-title: #555;
+    --extra-text: #666;
+
+    /* 추가할 계정 정보 */
+    --account-title: "Other Accounts";
+    --account-1: "GitHub Chaero0707";
+    --account-2: "tygem kongkong16";
+    --account-3: "igs Chaerogo";
 }
+
+
+/* =========================================================
+   1. PROFILE BACKGROUND
+   ========================================================= */
+
+.container {
+    max-width: none !important;
+    background-color: var(--profile-bg) !important;
+}
+
+
+/* =========================================================
+   2. ENGLISH TEXT — HANDWRITTEN STYLE
+   ========================================================= */
+
+/*
+   영어만 살짝 손글씨 느낌이 나도록 설정.
+   한국어 소개 부분에는 적용하지 않습니다.
+*/
+
+h1,
+h2,
+h3,
+h4,
+.Player-username,
+[class*="username"],
+[class*="Username"] {
+    font-family:
+        "Segoe Print",
+        "Bradley Hand",
+        "Comic Sans MS",
+        cursive !important;
+}
+
+
+/* =========================================================
+   3. PROFILE DESCRIPTION
+   ========================================================= */
+
+/*
+   한국어 소개는 필기체를 강제로 적용하지 않음.
+   OGS 기본 글꼴/색상을 유지.
+*/
+
+.player-about,
+.profile-about,
+.about {
+    font-family: inherit;
+    color: inherit;
+}
+
+
+/* =========================================================
+   4. ADDITIONAL ACCOUNT SECTION
+   ========================================================= */
+
+/*
+   프로필 아래쪽에 추가 정보를 표시하기 위한 영역.
+
+   실제 링크/주소를 넣을 경우 아래 텍스트를 수정하세요.
+*/
+
+.player-about::after {
+    content:
+        "\A\A"
+        "────────────────────"
+        "\A"
+        var(--account-title)
+        "\A\A"
+        "• " var(--account-1)
+        "\A"
+        "• " var(--account-2)
+        "\A"
+        "• " var(--account-3);
+
+    white-space: pre-line;
+
+    display: block;
+    margin-top: 25px;
+
+    font-family:
+        "Segoe Print",
+        "Bradley Hand",
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 0.95em;
+    line-height: 1.8;
+
+    color: var(--extra-text);
+}
+
+
+/* =========================================================
+   5. NO BOX / NO BORDER
+   ========================================================= */
+
+/*
+   요청한 대로 별도의 카드나 테두리를 만들지 않습니다.
+*/
+
+.player-about,
+.profile-about,
+.about {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   END
+   ========================================================= */
+```
