@@ -1,98 +1,68 @@
 ```css
 /* =========================================================
-   CHAEROGO — OGS PROFILE STYLE
+   CHAEROGO OGS PROFILE
+   BACKGROUND TEST
    ========================================================= */
 
-/* =======================
-   CUSTOM SETTINGS
-   여기만 수정하면 됨
-   ======================= */
-
+/*
+   ★ 원하는 배경색
+   이 색상만 바꾸면 됨.
+*/
 :root {
-    /* 프로필 배경 */
     --profile-bg: #FFE44D;
-
-    /* 영어용 필기체 */
-    --handwriting:
-        "Segoe Print",
-        "Bradley Hand",
-        "Comic Sans MS",
-        cursive;
-
-    /* Other Accounts */
-    --accounts-title: "Other Accounts";
-
-    --account-1: "GitHub : Chaero0707";
-    --account-2: "Tygem : kongkong16";
-    --account-3: "IGS : Chaerogo";
 }
 
 
 /* =========================================================
-   1. PROFILE BACKGROUND
+   MAIN PROFILE BACKGROUND
    ========================================================= */
 
-/*
-   OGS 프로필의 기본 컨테이너를 확장하고
-   배경을 노란색으로 지정
-*/
-
+/* OGS 기본 페이지 컨테이너 */
 .container {
     max-width: none !important;
-    background: var(--profile-bg) !important;
+    background-color: var(--profile-bg) !important;
+    background-image: none !important;
 }
 
 
 /* =========================================================
-   2. MAIN PROFILE AREAS
+   REMOVE WHITE LAYERS
    ========================================================= */
 
 /*
-   프로필 안쪽의 흰색 영역도 노란 배경과 이어지도록 함.
-   단, 카드 디자인은 만들지 않음.
+   안쪽에 있는 흰색 배경들이
+   노란색을 덮어쓰지 않도록 투명하게 만듦.
 */
 
+.container > .row,
+.container > .row > div,
 .container .row,
-.container .col,
-.container [class*="profile"] {
+.container [class*="profile"],
+.container [class*="Profile"] {
     background-color: transparent !important;
 }
 
 
 /* =========================================================
-   3. ENGLISH HANDWRITING
+   OGS PROFILE CONTENT
    ========================================================= */
 
-/*
-   영어 제목 / 닉네임 / 헤더 계열에 적용.
-*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-.Player-username {
-    font-family: var(--handwriting) !important;
+.container .panel,
+.container .card,
+.container .well {
+    background-color: transparent !important;
+    background-image: none !important;
 }
 
 
 /* =========================================================
-   4. ABOUT
+   NO BORDER / NO SHADOW
    ========================================================= */
 
-/*
-   한국어 소개는 기본 OGS 폰트 유지.
-*/
-
-.about,
-.player-about,
-.profile-about {
-    font-family: inherit !important;
-    color: inherit !important;
+.container .panel,
+.container .card,
+.container .well {
+    border: none !important;
+    box-shadow: none !important;
 }
-
-
-/* =========================================================
 ```
-
