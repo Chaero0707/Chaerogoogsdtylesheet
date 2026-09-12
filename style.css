@@ -1,68 +1,99 @@
 ```css
-/* =========================================================
-   CHAEROGO OGS PROFILE
-   BACKGROUND TEST
-   ========================================================= */
+/* ============================================================
+   CHAEROGO — OGS PROFILE STYLE SHEET
+   ============================================================
+   CUSTOM SETTINGS
+   ============================================================ */
 
-/*
-   ★ 원하는 배경색
-   이 색상만 바꾸면 됨.
-*/
 :root {
-    --profile-bg: #FFE44D;
+    /* 프로필 배경색 */
+    --profile-background: #FFE44D;
+
+    /* 영어용 손글씨 */
+    --english-font:
+        "Segoe Print",
+        "Bradley Hand",
+        "Comic Sans MS",
+        cursive;
 }
 
 
-/* =========================================================
-   MAIN PROFILE BACKGROUND
-   ========================================================= */
-
-/* OGS 기본 페이지 컨테이너 */
-.container {
-    max-width: none !important;
-    background-color: var(--profile-bg) !important;
-    background-image: none !important;
-}
-
-
-/* =========================================================
-   REMOVE WHITE LAYERS
-   ========================================================= */
+/* ============================================================
+   PROFILE BACKGROUND
+   ============================================================ */
 
 /*
-   안쪽에 있는 흰색 배경들이
-   노란색을 덮어쓰지 않도록 투명하게 만듦.
+   OGS 페이지의 배경을 노란색으로 설정.
+   !important는 OGS 기본 스타일보다 우선 적용하기 위한 것.
 */
 
-.container > .row,
-.container > .row > div,
-.container .row,
-.container [class*="profile"],
-.container [class*="Profile"] {
+html,
+body {
+    background: var(--profile-background) !important;
+}
+
+
+/*
+   OGS의 주요 페이지 영역.
+   내부 요소가 별도의 흰색 배경을 가지고 있으면
+   투명하게 만들어 바깥 노란색이 보이게 함.
+*/
+
+body > div,
+body > div > div {
     background-color: transparent !important;
 }
 
 
-/* =========================================================
-   OGS PROFILE CONTENT
-   ========================================================= */
+/* ============================================================
+   ENGLISH TEXT
+   ============================================================ */
 
-.container .panel,
-.container .card,
-.container .well {
-    background-color: transparent !important;
-    background-image: none !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--english-font) !important;
 }
 
 
-/* =========================================================
-   NO BORDER / NO SHADOW
-   ========================================================= */
+/* ============================================================
+   USERNAME
+   ============================================================ */
 
-.container .panel,
-.container .card,
-.container .well {
-    border: none !important;
+.Player-username {
+    font-family: var(--english-font) !important;
+}
+
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+
+/*
+   소개 글 자체는 OGS 기본 글꼴을 유지한다.
+*/
+
+.about {
+    font-family: inherit !important;
+}
+
+
+/* ============================================================
+   NO EXTRA BOXES
+   ============================================================ */
+
+.profile-card,
+.profile-page,
+.panel,
+.card {
     box-shadow: none !important;
 }
+
+
+/* ============================================================
+   END
+   ============================================================ */
 ```
