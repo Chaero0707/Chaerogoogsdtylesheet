@@ -1,8 +1,3 @@
-```css
-/* TEST - LIGHT YELLOW */
-
-.container {
-    background-color: #FFF9D9 !important;
-}
-```
+body {
+    background: red !important;
 
