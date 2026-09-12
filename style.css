@@ -1,9 +1,98 @@
 ```css
 /* =========================================================
-   OGS YELLOW BACKGROUND TEST
+   CHAEROGO — OGS PROFILE STYLE
    ========================================================= */
 
-.container {
-    background-color: #FFE44D !important;
+/* =======================
+   CUSTOM SETTINGS
+   여기만 수정하면 됨
+   ======================= */
+
+:root {
+    /* 프로필 배경 */
+    --profile-bg: #FFE44D;
+
+    /* 영어용 필기체 */
+    --handwriting:
+        "Segoe Print",
+        "Bradley Hand",
+        "Comic Sans MS",
+        cursive;
+
+    /* Other Accounts */
+    --accounts-title: "Other Accounts";
+
+    --account-1: "GitHub : Chaero0707";
+    --account-2: "Tygem : kongkong16";
+    --account-3: "IGS : Chaerogo";
 }
+
+
+/* =========================================================
+   1. PROFILE BACKGROUND
+   ========================================================= */
+
+/*
+   OGS 프로필의 기본 컨테이너를 확장하고
+   배경을 노란색으로 지정
+*/
+
+.container {
+    max-width: none !important;
+    background: var(--profile-bg) !important;
+}
+
+
+/* =========================================================
+   2. MAIN PROFILE AREAS
+   ========================================================= */
+
+/*
+   프로필 안쪽의 흰색 영역도 노란 배경과 이어지도록 함.
+   단, 카드 디자인은 만들지 않음.
+*/
+
+.container .row,
+.container .col,
+.container [class*="profile"] {
+    background-color: transparent !important;
+}
+
+
+/* =========================================================
+   3. ENGLISH HANDWRITING
+   ========================================================= */
+
+/*
+   영어 제목 / 닉네임 / 헤더 계열에 적용.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.Player-username {
+    font-family: var(--handwriting) !important;
+}
+
+
+/* =========================================================
+   4. ABOUT
+   ========================================================= */
+
+/*
+   한국어 소개는 기본 OGS 폰트 유지.
+*/
+
+.about,
+.player-about,
+.profile-about {
+    font-family: inherit !important;
+    color: inherit !important;
+}
+
+
+/* =========================================================
 ```
+
