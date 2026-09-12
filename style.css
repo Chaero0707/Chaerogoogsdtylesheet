@@ -1,15 +1,140 @@
 ```css
-/* OGS CSS LOAD TEST */
+/* =========================================================
+   🌼 CHAEROGO — OGS PROFILE STYLE
+   =========================================================
+   아래 CUSTOM SETTINGS만 수정하면 디자인을 쉽게 변경할 수 있습니다.
+   ========================================================= */
 
-.profile-page {
-    background-color: red !important;
+
+/* =========================================================
+   CUSTOM SETTINGS
+   ========================================================= */
+
+:root {
+
+    /* 🌼 프로필 배경 */
+    --profile-background: #FFF9D9;
+
+    /* ✍️ 영어 필기체 */
+    --english-font:
+        "Segoe Print",
+        "Bradley Hand",
+        "Comic Sans MS",
+        cursive;
+
+    /* 📋 다른 계정 제목 */
+    --accounts-title: "Other Accounts";
+
+    /* 계정 목록 */
+    --account-1: "GitHub       : Chaero0707";
+    --account-2: "Tygem        : kongkong16";
+    --account-3: "IGS          : Chaerogo";
+
 }
+
+
+/* =========================================================
+   PROFILE BACKGROUND
+   ========================================================= */
+
+/* OGS 프로필 전체 배경 */
 
 .container {
-    background-color: red !important;
+    background-color: var(--profile-background) !important;
 }
 
-#main {
-    background-color: red !important;
+
+/* =========================================================
+   ENGLISH TEXT
+   ========================================================= */
+
+/*
+   영어 이름 / 제목 등에 손글씨 느낌 적용
+*/
+
+h1,
+h2,
+h3,
+h4,
+.Player-username,
+[class*="username"],
+[class*="Username"] {
+
+    font-family: var(--english-font) !important;
+
+}
+
+
+/* =========================================================
+   KOREAN ABOUT
+   ========================================================= */
+
+/*
+   한국어 소개는 기본 OGS 글꼴 유지
+*/
+
+.player-about,
+.profile-about,
+.about {
+
+    font-family: inherit !important;
+    color: inherit !important;
+
+}
+
+
+/* =========================================================
+   OTHER ACCOUNTS
+   ========================================================= */
+
+/*
+   소개 영역 아래에 다른 계정 표시
+*/
+
+.player-about::after {
+
+    content:
+        "\A\A"
+        var(--accounts-title)
+        "\A\A"
+        "  " var(--account-1)
+        "\A"
+        "  " var(--account-2)
+        "\A"
+        "  " var(--account-3);
+
+    display: block;
+
+    white-space: pre-line;
+
+    margin-top: 25px;
+
+    font-family: var(--english-font);
+
+    font-size: 0.95em;
+
+    line-height: 1.8;
+
+    color: inherit;
+
+}
+
+
+/* =========================================================
+   CLEAN DESIGN
+   ========================================================= */
+
+/*
+   카드 / 테두리 / 그림자 없음
+*/
+
+.player-about,
+.profile-about,
+.about {
+
+    border: none !important;
+
+    box-shadow: none !important;
+
 }
 ```
