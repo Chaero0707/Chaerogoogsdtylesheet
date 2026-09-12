@@ -1,8 +1,18 @@
 ```css
 /* =========================================================
    OGS PROFILE STYLE SHEET
-   ─────────────────────────────────────────────────────────
-   수정하고 싶은 부분은 이곳의 "CUSTOM SETTINGS"만 수정하세요.
+   =========================================================
+   
+   ★★★ 수정은 아래 CUSTOM SETTINGS만 하면 됩니다 ★★★
+
+   현재 디자인
+   - 연노랑 프로필 배경
+   - OGS 기본 글자 색상 유지
+   - 영어 텍스트는 손글씨 느낌
+   - 한국어 소개는 기본 글꼴 유지
+   - 불필요한 카드/박스/테두리 없음
+   - 프로필 아래에 Other Accounts 표시
+
    ========================================================= */
 
 
@@ -10,19 +20,52 @@
    CUSTOM SETTINGS
    ========================================================= */
 
-/* 프로필 배경색 */
 :root {
-    --profile-bg: #FFF9D9;
 
-    /* 아래 글씨는 기존 OGS 색상을 그대로 사용 */
-    --extra-title: #555;
-    --extra-text: #666;
+    /* ---------- PROFILE ---------- */
 
-    /* 추가할 계정 정보 */
-    --account-title: "Other Accounts";
-    --account-1: "GitHub Chaero0707";
-    --account-2: "tygem kongkong16";
-    --account-3: "igs Chaerogo";
+    /* 프로필 배경 */
+    --profile-background: #FFF9D9;
+
+
+    /* ---------- HANDWRITING ---------- */
+
+    /* 영어에 사용할 손글씨 계열 폰트 */
+    --english-font:
+        "Segoe Print",
+        "Bradley Hand",
+        "Comic Sans MS",
+        cursive;
+
+
+    /* ---------- OTHER ACCOUNTS ---------- */
+
+    /* 제목 */
+    --accounts-title: "Other Accounts";
+
+
+    /*
+       계정 이름은 여기서 자유롭게 변경 가능
+
+       예:
+       "GitHub       : Chaero0707"
+       "Tygem       : kongkong16"
+       "IGS         : Chaerogo"
+    */
+
+    --account-1: "GitHub       : Chaero0707";
+    --account-2: "Tygem       : kongkong16";
+    --account-3: "IGS         : Chaerogo";
+
+
+    /*
+       계정을 더 추가하고 싶다면
+       아래처럼 변수를 추가할 수 있음.
+
+       --account-4: "KGS         : Chaero";
+       --account-5: "Fox         : Chaero";
+    */
+
 }
 
 
@@ -30,19 +73,23 @@
    1. PROFILE BACKGROUND
    ========================================================= */
 
+/*
+   프로필 전체의 기본 배경
+*/
+
 .container {
-    max-width: none !important;
-    background-color: var(--profile-bg) !important;
+    background-color: var(--profile-background) !important;
 }
 
 
 /* =========================================================
-   2. ENGLISH TEXT — HANDWRITTEN STYLE
+   2. ENGLISH HANDWRITING
    ========================================================= */
 
 /*
-   영어만 살짝 손글씨 느낌이 나도록 설정.
-   한국어 소개 부분에는 적용하지 않습니다.
+   영어 제목/닉네임 등에 손글씨 느낌 적용
+
+   한국어 소개 영역에는 적용하지 않음.
 */
 
 h1,
@@ -52,69 +99,68 @@ h4,
 .Player-username,
 [class*="username"],
 [class*="Username"] {
-    font-family:
-        "Segoe Print",
-        "Bradley Hand",
-        "Comic Sans MS",
-        cursive !important;
+
+    font-family: var(--english-font) !important;
+
 }
 
 
 /* =========================================================
-   3. PROFILE DESCRIPTION
+   3. KOREAN / ABOUT
    ========================================================= */
 
 /*
-   한국어 소개는 필기체를 강제로 적용하지 않음.
-   OGS 기본 글꼴/색상을 유지.
+   소개 부분은 OGS 기본 글꼴과 색상을 유지.
 */
 
 .player-about,
 .profile-about,
 .about {
-    font-family: inherit;
-    color: inherit;
+
+    font-family: inherit !important;
+    color: inherit !important;
+
 }
 
 
 /* =========================================================
-   4. ADDITIONAL ACCOUNT SECTION
+   4. OTHER ACCOUNTS
    ========================================================= */
 
 /*
-   프로필 아래쪽에 추가 정보를 표시하기 위한 영역.
+   프로필 소개 아래에 추가되는 계정 정보.
 
-   실제 링크/주소를 넣을 경우 아래 텍스트를 수정하세요.
+   OGS의 기존 프로필 UI를 박스 형태로 바꾸지 않고
+   자연스럽게 이어지도록 표시.
 */
 
 .player-about::after {
+
     content:
         "\A\A"
-        "────────────────────"
+        var(--accounts-title)
         "\A"
-        var(--account-title)
-        "\A\A"
-        "• " var(--account-1)
         "\A"
-        "• " var(--account-2)
+        "  " var(--account-1)
         "\A"
-        "• " var(--account-3);
+        "  " var(--account-2)
+        "\A"
+        "  " var(--account-3);
 
     white-space: pre-line;
 
     display: block;
-    margin-top: 25px;
 
-    font-family:
-        "Segoe Print",
-        "Bradley Hand",
-        "Comic Sans MS",
-        cursive;
+    margin-top: 22px;
+
+    font-family: var(--english-font);
 
     font-size: 0.95em;
-    line-height: 1.8;
 
-    color: var(--extra-text);
+    line-height: 1.9;
+
+    color: inherit;
+
 }
 
 
@@ -123,14 +169,33 @@ h4,
    ========================================================= */
 
 /*
-   요청한 대로 별도의 카드나 테두리를 만들지 않습니다.
+   별도의 카드나 테두리를 만들지 않음.
 */
 
 .player-about,
 .profile-about,
 .about {
+
     border: none !important;
+
     box-shadow: none !important;
+
+}
+
+
+/* =========================================================
+   6. CLEAN PROFILE
+   ========================================================= */
+
+/*
+   프로필을 최대한 깔끔하게 유지.
+*/
+
+.profile,
+.profile-container {
+
+    box-shadow: none !important;
+
 }
 
 
