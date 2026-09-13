@@ -7,11 +7,6 @@
 .player-profile .main-content .stat-box,
 .player-profile .main-content .profile-row,
 .player-profile .main-content table,
-.player-profile .main-content h1,
-.player-profile .main-content h2,
-.player-profile .main-content h3,
-.player-profile .main-content label,
-.player-profile .main-content span:not(.about-section *) {
     color: #ffffff !important;
 }
 
